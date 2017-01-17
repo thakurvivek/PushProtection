@@ -1,0 +1,21 @@
+group 'org.tsoc.plugins'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile localGroovy()
+    compile gradleApi()
+    compile 'org.eclipse.jgit:org.eclipse.jgit:3.6.2.201501210735-r'
+    testCompile('org.spockframework:spock-core:1.0-groovy-2.4') {
+        exclude group: 'org.codehaus.groovy', module: 'groovy-all'
+    }
+}
